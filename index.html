@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="SiteForge AI">
+    <meta name="description" content="Hello">
     <title>Hello</title>
     <style>
 /* General Styles */
@@ -75,6 +76,23 @@ p {
     transition: background-color 0.3s ease, transform 0.3s ease;
     border: none;
     cursor: pointer;
+    margin-right: 15px; /* Added spacing between buttons */
+}
+
+.button:last-child {
+    margin-right: 0;
+}
+
+.button.secondary-button {
+    background-color: transparent;
+    border: 2px solid var(--bg-white);
+    color: var(--bg-white);
+}
+
+.button.secondary-button:hover {
+    background-color: var(--bg-white);
+    color: var(--primary-pink);
+    transform: translateY(-2px);
 }
 
 .button:hover {
@@ -82,9 +100,106 @@ p {
     transform: translateY(-2px);
 }
 
+.button.small-button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+/* Navigation */
+.main-nav {
+    background-color: var(--bg-white);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav .logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-pink);
+    text-decoration: none;
+}
+
+.main-nav .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav .nav-links li {
+    margin-left: 25px;
+}
+
+.main-nav .nav-links a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav .nav-links a:hover {
+    color: var(--primary-pink);
+}
+
+.main-nav .button-nav {
+    padding: 8px 18px;
+    font-weight: 600;
+    border-radius: 30px;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.main-nav .button-nav.sign-in {
+    background-color: transparent;
+    border: 2px solid var(--primary-pink);
+    color: var(--primary-pink);
+}
+
+.main-nav .button-nav.sign-in:hover {
+    background-color: var(--primary-pink);
+    color: var(--bg-white);
+}
+
+.main-nav .button-nav.sign-up {
+    background-color: var(--primary-pink);
+    color: var(--bg-white);
+    border: 2px solid var(--primary-pink);
+}
+
+.main-nav .button-nav.sign-up:hover {
+    background-color: var(--dark-pink);
+    border-color: var(--dark-pink);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(255, 105, 180, 0.8), rgba(255, 192, 203, 0.8)), url('https://via.placeholder.com/1500x800/FFC0CB/FFFFFF?text=Hello+Innovation') no-repeat center center/cover;
+    background: linear-gradient(rgba(255, 105, 180, 0.85), rgba(255, 192, 203, 0.85)), url('https://via.placeholder.com/1500x800/FFC0CB/FFFFFF?text=Hello+Innovation') no-repeat center center/cover;
     color: var(--bg-white);
     text-align: center;
     padding: 150px 0;
@@ -143,6 +258,9 @@ section {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 5px solid var(--primary-pink);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes button to bottom */
 }
 
 .service-item:hover {
@@ -219,6 +337,76 @@ section {
     margin-right: auto;
 }
 
+/* Form Sections */
+.form-section {
+    background-color: var(--bg-white);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.form-section h2 {
+    color: var(--primary-pink);
+}
+
+.auth-form {
+    max-width: 450px;
+    margin: 40px auto 0 auto;
+    padding: 40px;
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px var(--shadow-light);
+    text-align: left;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 2px var(--secondary-pink);
+}
+
+.auth-form .button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    margin-top: 10px;
+    margin-right: 0; /* Remove right margin for full width button */
+}
+
+.auth-form .form-footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: var(--text-light);
+}
+
+.auth-form .form-footer a {
+    color: var(--primary-pink);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-form .form-footer a:hover {
+    text-decoration: underline;
+}
+
 /* Footer */
 .footer-section {
     background-color: var(--text-dark);
@@ -251,6 +439,12 @@ section {
 }
 
 /* Responsive Design */
+@media (max-width: 992px) {
+    .main-nav .nav-links {
+        margin-right: 0;
+    }
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 2.5em;
@@ -285,6 +479,43 @@ section {
         display: block;
         margin: 10px 0;
     }
+
+    /* Navigation for mobile */
+    .main-nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Adjust based on nav height */
+        left: 0;
+        background-color: var(--bg-white);
+        box-shadow: 0 8px 10px var(--shadow-light);
+        padding: 20px 0;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .main-nav .nav-links.active {
+        display: flex;
+    }
+
+    .main-nav .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .main-nav .nav-links li:last-child a, .main-nav .nav-links li:nth-last-child(2) a {
+        margin-left: 0; /* Center buttons */
+    }
+
+    .main-nav .button-nav {
+        width: calc(100% - 40px);
+        margin: 10px auto;
+        display: block;
+    }
+
+    .hamburger {
+        display: flex;
+    }
 }
 
 @media (max-width: 480px) {
@@ -299,13 +530,30 @@ section {
     .button {
         padding: 12px 25px;
         font-size: 0.9em;
+        margin-bottom: 10px; /* Stack buttons in hero */
+        margin-right: 0;
     }
 
     .hero-section {
         padding: 80px 0;
         min-height: 400px;
     }
+
+    .cta-section .button {
+        margin-right: 0;
+        margin-bottom: 15px;
+        display: block;
+        width: 80%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .auth-form {
+        padding: 25px;
+    }
 }
+
     </style>
 </head>
 <body>
@@ -319,11 +567,31 @@ section {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <nav class="main-nav">
+        <div class="container">
+            <a href="#" class="logo">Hello</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#signin" class="button-nav sign-in">Sign In</a></li>
+                <li><a href="#signup" class="button-nav sign-up">Sign Up</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
     <header class="hero-section">
         <div class="container">
             <h1>Welcome to Hello: Your Partner in Innovation</h1>
             <p>Experience cutting-edge solutions designed to elevate your business and simplify your life. Discover the Hello difference today.</p>
             <a href="#services" class="button">Explore Our Solutions</a>
+            <a href="#contact" class="button secondary-button">Get a Free Consultation</a>
         </div>
     </header>
 
@@ -341,18 +609,22 @@ section {
                 <div class="service-item">
                     <h3>Strategic Consulting</h3>
                     <p>Unlock your business's full potential with our expert strategic guidance. We help you define your vision and chart a clear path to success.</p>
+                    <a href="#contact" class="button small-button">Learn More</a>
                 </div>
                 <div class="service-item">
                     <h3>Innovative Solutions Development</h3>
                     <p>From concept to launch, we build bespoke solutions tailored to your unique needs, leveraging the latest technologies and best practices.</p>
+                    <a href="#contact" class="button small-button">Learn More</a>
                 </div>
                 <div class="service-item">
                     <h3>Customer Experience Design</h3>
                     <p>Create memorable and impactful interactions for your audience. We design seamless and engaging customer journeys that drive loyalty.</p>
+                    <a href="#contact" class="button small-button">Learn More</a>
                 </div>
                 <div class="service-item">
                     <h3>Digital Transformation</h3>
                     <p>Embrace the future with confidence. We guide businesses through comprehensive digital transformations, optimizing processes and systems.</p>
+                    <a href="#contact" class="button small-button">Learn More</a>
                 </div>
             </div>
         </div>
@@ -386,6 +658,45 @@ section {
             <h2>Ready to Transform Your Business?</h2>
             <p>Connect with Hello today and discover how our expertise can help you achieve your goals. Let's build something extraordinary together.</p>
             <a href="#" class="button">Get in Touch</a>
+            <a href="#signup" class="button secondary-button">Join Our Newsletter</a>
+        </div>
+    </section>
+
+    <section id="signin" class="form-section">
+        <div class="container">
+            <h2>Sign In to Your Account</h2>
+            <form class="auth-form">
+                <label for="signin-email">Email:</label>
+                <input type="email" id="signin-email" name="email" required>
+
+                <label for="signin-password">Password:</label>
+                <input type="password" id="signin-password" name="password" required>
+
+                <button type="submit" class="button">Sign In</button>
+                <p class="form-footer">Don't have an account? <a href="#signup">Sign Up</a></p>
+            </form>
+        </div>
+    </section>
+
+    <section id="signup" class="form-section">
+        <div class="container">
+            <h2>Create a New Account</h2>
+            <form class="auth-form">
+                <label for="signup-name">Full Name:</label>
+                <input type="text" id="signup-name" name="fullname" required>
+
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="email" required>
+
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="password" required>
+
+                <label for="signup-confirm-password">Confirm Password:</label>
+                <input type="password" id="signup-confirm-password" name="confirm_password" required>
+
+                <button type="submit" class="button">Sign Up</button>
+                <p class="form-footer">Already have an account? <a href="#signin">Sign In</a></p>
+            </form>
         </div>
     </section>
 
@@ -399,7 +710,15 @@ section {
             </nav>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
+
 </body>
 </html>
